@@ -1,4 +1,4 @@
-name: Deploy master branch to production server
+name: Deploy master branch to production server 1
 
 on:
   push:
