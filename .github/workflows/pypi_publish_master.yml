@@ -37,7 +37,12 @@ jobs:
         poetry config $DEBUG_PASSWORD
         poetry build
         echo $DEBUG_PASSWORD
-        poetry publish
+
+        if ["$DEBUG_PASSWORD" == "pypi-AgEIcHlwaS5vcmcCJGIyZjgwYjAyLWVmMTMtNDZiZi1iYWRlLTZhYTQ2ODI5ZWYwZgACKlszLCI4YWMxZGMzNy1iMmY5LTQxMWYtOWFhYi0xMDczNzZjZmMzZGIiXQAABiD7oaaLEeALQpGThiOA20QLEIvbmGzUAcEdwb8gxEo4XA"]
+        then
+          echo "Okkkkkkkkkk"
+        fi
+    # poetry publish
     # - name: Show TOKEN 1
     #   env:
     #     DEBUG_PASSWORD: ${{ secrets.PYPY_PUBLISH }}
