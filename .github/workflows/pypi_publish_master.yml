@@ -9,46 +9,21 @@ jobs:
   build:
     name: Deploy
     runs-on: ubuntu-latest
-    # steps:
-    #   - uses: actions/checkout@v3
-    #   - name: Build and publish to pypi
-    #     uses: JRubics/poetry-publish@v1.17
-    #     with:
-    #       pypi_token: ${{ secrets.PYPY_PUBLISH }}
+
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python
       uses: actions/setup-python@v3
       with:
         python-version: '3.x'
-    # - name: Install dependencies
-    #   run: |
-    #     python -m pip install --upgrade pip
-    #     pip install build
-    # - name: Build package
-    #   run: python -m build
-    - name: install poetry
+    - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-         pip install poetry
-    - name: Install dependencies
-      # env:
-      #   DEBUG_PASSWORD: ${{ secrets.PYPY_PUBLISH }}
-      run: |
-        poetry --version
-        poetry config pypi-token.pypi ${{secrets.PYPY_PUBLISH}}
-        poetry build
-        echo "Endddddd"
-        poetry publish
-    # - name: Show TOKEN 1
-    #   env:
-    #     DEBUG_PASSWORD: ${{ secrets.PYPY_PUBLISH }}
-    #   run: |
-    #     echo ${{secrets.PYPY_PUBLISH}} | sed 's/./& /g'
-    # - name: Run tmate
-    #   uses: mxschmitt/action-tmate@v2
-    # - name: Publish package
-    #   uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
-    #   with:
-    #     user: __token__
-    #     password: ${{ secrets.PYPY_PUBLISH }}
+        pip install build
+    - name: Build package
+      run: python -m build
+    - name: Publish package
+      uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
+      with:
+        user: __token__
+        password: ${{ secrets.PYPY_PUBLISH }}
