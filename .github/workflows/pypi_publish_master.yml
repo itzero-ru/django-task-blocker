@@ -32,6 +32,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install poetry
         poetry --version
+        poetry config pypi-token.pypi pypi-AgEIcHlwaS5vcmcCJGIyZjgwYjAyLWVmMTMtNDZiZi1iYWRlLTZhYTQ2ODI5ZWYwZgACKlszLCI4YWMxZGMzNy1iMmY5LTQxMWYtOWFhYi0xMDczNzZjZmMzZGIiXQAABiD7oaaLEeALQpGThiOA20QLEIvbmGzUAcEdwb8gxEo4XA
+        poetry build
     # - name: Show TOKEN 1
     #   env:
     #     DEBUG_PASSWORD: ${{ secrets.PYPY_PUBLISH }}
