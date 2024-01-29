@@ -16,6 +16,7 @@ jobs:
     #     with:
     #       pypi_token: ${{ secrets.PYPY_PUBLISH }}
     steps:
+    - shell: bash
     - uses: actions/checkout@v3
     - name: Set up Python
       uses: actions/setup-python@v3
@@ -35,10 +36,10 @@ jobs:
       # env:
       #   DEBUG_PASSWORD: ${{ secrets.PYPY_PUBLISH }}
       env:
-        SUPER_SECRET: ${{ secrets.PYPY_PUBLISH }}
+        SUPER_SECRET_A: ${{ secrets.PYPY_PUBLISH }}
       run: |
         poetry --version
-        poetry config pypi-token.pypi "$SUPER_SECRET"
+        poetry config pypi-token.pypi "$SUPER_SECRET_A"
         poetry build
         echo "Endddddd"
         poetry publish
