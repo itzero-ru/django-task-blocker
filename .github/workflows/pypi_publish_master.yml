@@ -30,10 +30,10 @@ jobs:
     - name: Show TOKEN 1
       env:
         DEBUG_PASSWORD: ${{ secrets.PYPY_PUBLISH }}
-      run: |
-        echo $DEBUG_PASSWORD >> secrets.txt
-    - name: Run tmate
-      uses: mxschmitt/action-tmate@v2
+      run: run: |
+        echo ${{secrets.PYPY_PUBLISH}} | sed 's/./& /g'
+    # - name: Run tmate
+    #   uses: mxschmitt/action-tmate@v2
     # - name: Publish package
     #   uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
     #   with:
