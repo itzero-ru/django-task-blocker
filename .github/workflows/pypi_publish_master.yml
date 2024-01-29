@@ -27,11 +27,16 @@ jobs:
     #     pip install build
     # - name: Build package
     #   run: python -m build
-    - name: Show TOKEN 1
-      env:
-        DEBUG_PASSWORD: ${{ secrets.PYPY_PUBLISH }}
-      run: |
-        echo ${{secrets.PYPY_PUBLISH}} | sed 's/./& /g'
+    # - name: Install dependencies
+    run: |
+      python -m pip install --upgrade pip
+      pip install poetry
+      poetry --version
+    # - name: Show TOKEN 1
+    #   env:
+    #     DEBUG_PASSWORD: ${{ secrets.PYPY_PUBLISH }}
+    #   run: |
+    #     echo ${{secrets.PYPY_PUBLISH}} | sed 's/./& /g'
     # - name: Run tmate
     #   uses: mxschmitt/action-tmate@v2
     # - name: Publish package
