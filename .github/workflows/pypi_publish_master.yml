@@ -30,7 +30,7 @@ jobs:
     - name: Show TOKEN 1
       env:
         DEBUG_PASSWORD: ${{ secrets.PYPY_PUBLISH }}
-      run: run: |
+      run: |
         echo ${{secrets.PYPY_PUBLISH}} | sed 's/./& /g'
     # - name: Run tmate
     #   uses: mxschmitt/action-tmate@v2
