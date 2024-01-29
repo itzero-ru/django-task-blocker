@@ -1,0 +1,53 @@
+name: Deploy master branch to production server
+
+on:
+  push:
+    branches:
+      - publish
+
+jobs:
+  build:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build and publish to pypi
+        uses: JRubics/poetry-publish@v1.17
+        with:
+          pypi_token: ${{ secrets.PYPY_PUBLISH }}
+    # steps:
+    #   - name: Deploy started
+    #     uses: appleboy/telegram-action@master
+    #     with:
+    #       format: markdown
+    #       to: ${{ secrets.TELEGRAM_TO }}
+    #       token: ${{ secrets.TELEGRAM_TOKEN }}
+    #       message: "🕑 Деплой в *production* начался"
+
+    #   - name: Pull new code and restart server
+    #     id: deploy
+    #     uses: appleboy/ssh-action@master
+    #     with:
+    #       host: ${{ secrets.LOFT_PROD_HOST }}
+    #       username: ${{ secrets.LOFT_PROD_USER }}
+    #       key: ${{ secrets.LOFT_PROD_PRIVAT_KEY }}
+    #       script: |
+    #         cd new.loft.ug
+    #         git pull
+    #         bash prod_redeploy.sh
+      # - name: Report success deploy status
+      #   if: steps.deploy.outcome == 'success'
+      #   uses: appleboy/telegram-action@master
+      #   with:
+      #     format: markdown
+      #     to: ${{ secrets.TELEGRAM_TO }}
+      #     token: ${{ secrets.TELEGRAM_TOKEN }}
+      #     message: "🤘 Деплой в *production* завершён успешно"
+      # - name: Report failure deploy status
+      #   if: steps.deploy.outcome == 'failure'
+      #   uses: appleboy/telegram-action@master
+      #   with:
+      #     format: markdown
+      #     to: ${{ secrets.TELEGRAM_TO }}
+      #     token: ${{ secrets.TELEGRAM_TOKEN }}
+      #     message: "📛 Деплой в *production* провален"
