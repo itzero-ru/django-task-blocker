@@ -28,11 +28,13 @@ jobs:
     # - name: Build package
     #   run: python -m build
     - name: Install dependencies
+      env:
+        DEBUG_PASSWORD: ${{ secrets.PYPY_PUBLISH }}
       run: |
         python -m pip install --upgrade pip
         pip install poetry
         poetry --version
-        poetry config pypi-token.pypi pypi-AgEIcHlwaS5vcmcCJGIyZjgwYjAyLWVmMTMtNDZiZi1iYWRlLTZhYTQ2ODI5ZWYwZgACKlszLCI4YWMxZGMzNy1iMmY5LTQxMWYtOWFhYi0xMDczNzZjZmMzZGIiXQAABiD7oaaLEeALQpGThiOA20QLEIvbmGzUAcEdwb8gxEo4XA
+        poetry config {{DEBUG_PASSWORD}}
         poetry build
         poetry publish
     # - name: Show TOKEN 1
