@@ -36,7 +36,7 @@ jobs:
       #   DEBUG_PASSWORD: ${{ secrets.PYPY_PUBLISH }}
       run: |
         poetry --version
-        poetry config pypi-token.pypi ${{ secrets.PYPY_PUBLISH }}
+        poetry config pypi-token.pypi ${{secrets.PYPY_PUBLISH}}
         poetry build
         echo "Endddddd"
         poetry publish
