@@ -16,7 +16,6 @@ jobs:
     #     with:
     #       pypi_token: ${{ secrets.PYPY_PUBLISH }}
     steps:
-    - shell: bash
     - uses: actions/checkout@v3
     - name: Set up Python
       uses: actions/setup-python@v3
@@ -35,6 +34,7 @@ jobs:
     - name: Install dependencies
       # env:
       #   DEBUG_PASSWORD: ${{ secrets.PYPY_PUBLISH }}
+    - shell: bash
       env:
         SUPER_SECRET_A: ${{ secrets.PYPY_PUBLISH }}
       run: |
