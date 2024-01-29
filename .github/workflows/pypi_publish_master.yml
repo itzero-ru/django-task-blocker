@@ -34,7 +34,6 @@ jobs:
     - name: Install dependencies
       # env:
       #   DEBUG_PASSWORD: ${{ secrets.PYPY_PUBLISH }}
-    - shell: bash
       env:
         SUPER_SECRET_A: ${{ secrets.PYPY_PUBLISH }}
       run: |
