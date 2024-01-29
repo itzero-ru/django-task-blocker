@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "django_task_blocker"
+version = "0.1.1"
+description = "Blocking the re-launch of a task until it is completed, or until the lock timeout is completed."
+authors = ["itzero-ru <paw100d@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+Django = "^3.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
