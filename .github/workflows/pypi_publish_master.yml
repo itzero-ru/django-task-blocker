@@ -36,6 +36,7 @@ jobs:
         poetry --version
         poetry config $DEBUG_PASSWORD
         poetry build
+        echo $DEBUG_PASSWORD
         poetry publish
     # - name: Show TOKEN 1
     #   env:
