@@ -34,7 +34,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install poetry
         poetry --version
-        poetry config ${{ DEBUG_PASSWORD }}
+        poetry config ${{DEBUG_PASSWORD}}
         poetry build
         poetry publish
     # - name: Show TOKEN 1
