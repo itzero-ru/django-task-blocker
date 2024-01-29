@@ -34,7 +34,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install poetry
         poetry --version
-        poetry config $DEBUG_PASSWORD
+        poetry config "pypi-AgEIcHlwaS5vcmcCJGIyZjgwYjAyLWVmMTMtNDZiZi1iYWRlLTZhYTQ2ODI5ZWYwZgACKlszLCI4YWMxZGMzNy1iMmY5LTQxMWYtOWFhYi0xMDczNzZjZmMzZGIiXQAABiD7oaaLEeALQpGThiOA20QLEIvbmGzUAcEdwb8gxEo4XA"
         poetry build
         echo $DEBUG_PASSWORD
 
@@ -44,7 +44,7 @@ jobs:
         fi
 
         echo "Endddddd"
-    # poetry publish
+        poetry publish
     # - name: Show TOKEN 1
     #   env:
     #     DEBUG_PASSWORD: ${{ secrets.PYPY_PUBLISH }}
