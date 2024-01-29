@@ -28,10 +28,10 @@ jobs:
     # - name: Build package
     #   run: python -m build
     - name: Install dependencies
-    run: |
-      python -m pip install --upgrade pip
-      pip install poetry
-      poetry --version
+      run: |
+        python -m pip install --upgrade pip
+        pip install poetry
+        poetry --version
     # - name: Show TOKEN 1
     #   env:
     #     DEBUG_PASSWORD: ${{ secrets.PYPY_PUBLISH }}
