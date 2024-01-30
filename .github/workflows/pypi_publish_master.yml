@@ -44,6 +44,7 @@ jobs:
         poetry config pypi-token.pypi '$SUPER_SECRET_A'
         poetry build
         echo "$PUB_ENV"
+        echo "$SUPER_SECRET_A"
         poetry publish
     # - name: Show TOKEN 1
     #   env:
