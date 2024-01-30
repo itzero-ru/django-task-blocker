@@ -38,7 +38,7 @@ jobs:
       #   DEBUG_PASSWORD: ${{ secrets.PYPY_PUBLISH }}
       env:
         SUPER_SECRET_A: ${{ secrets.TASK_BLOKER_KEY }}
-        PUB_ENV: 'araaaaaaaaaaaa2321'
+        PUB_ENV: 'araaaaaaaaaaaa232145'
       run: |
         poetry --version
         echo "$PUB_ENV"
