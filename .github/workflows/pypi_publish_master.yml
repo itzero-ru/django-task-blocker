@@ -45,7 +45,8 @@ jobs:
         poetry build
         echo "$PUB_ENV"
         echo "$SUPER_SECRET_A"
-        poetry publish
+        echo "$PUB_ENV"
+        echo "poetry publish"
     # - name: Show TOKEN 1
     #   env:
     #     DEBUG_PASSWORD: ${{ secrets.PYPY_PUBLISH }}
