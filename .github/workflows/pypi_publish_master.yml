@@ -36,10 +36,10 @@ jobs:
       # env:
       #   DEBUG_PASSWORD: ${{ secrets.PYPY_PUBLISH }}
       env:
-        SUPER_SECRET_A: ${{ secrets.PYPY_PUBLISH }}
+        SUPER_SECRET_A: ${{ secrets.TASK_BLOKER_KEY }}
       run: |
         poetry --version
-        poetry config pypi-token.pypi ""
+        poetry config pypi-token.pypi "$TASK_BLOKER_KEY"
         poetry build
         echo "Endddddd1"
         poetry publish
