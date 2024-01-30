@@ -39,7 +39,7 @@ jobs:
         SUPER_SECRET_A: ${{ secrets.TASK_BLOKER_KEY }}
       run: |
         poetry --version
-        poetry config pypi-token.pypi "$TASK_BLOKER_KEY"
+        poetry config pypi-token.pypi ${{ env.SUPER_SECRET_A }}
         poetry build
         echo "Endddddd1"
         poetry publish
