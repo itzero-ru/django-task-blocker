@@ -39,7 +39,7 @@ jobs:
         SUPER_SECRET_A: ${{ secrets.PYPY_PUBLISH }}
       run: |
         poetry --version
-        poetry config pypi-token.pypi $SUPER_SECRET_A
+        poetry config pypi-token.pypi "$SUPER_SECRET_A"
         poetry build
         echo "Endddddd1"
         poetry publish
