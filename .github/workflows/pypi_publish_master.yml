@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    environment: CI
+    environment: django-task-blocker
     name: Deploy
     runs-on: ubuntu-latest
     # steps:
