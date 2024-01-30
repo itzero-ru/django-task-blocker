@@ -10,52 +10,21 @@ jobs:
     environment: django-task-blocker
     name: Deploy
     runs-on: ubuntu-latest
-    # steps:
-    #   - uses: actions/checkout@v3
-    #   - name: Build and publish to pypi
-    #     uses: JRubics/poetry-publish@v1.17
-    #     with:
-    #       pypi_token: ${{ secrets.PYPY_PUBLISH }}
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python
       uses: actions/setup-python@v3
       with:
         python-version: '3.x'
-      # secrets: inherit
-    # - name: Install dependencies
-    #   run: |
-    #     python -m pip install --upgrade pip
-    #     pip install build
-    # - name: Build package
-    #   run: python -m build
     - name: install poetry
       run: |
         python -m pip install --upgrade pip
-         pip install poetry
-    - name: Install dependencies
-      # env:
-      #   DEBUG_PASSWORD: ${{ secrets.PYPY_PUBLISH }}
+        pip install poetry
+    - name: publish PyPi
       env:
-        SUPER_SECRET_A: ${{ secrets.TASK_BLOKER_KEY }}
-        PUB_ENV: 'araaaaaaaaaaaa232145'
+        PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
       run: |
         poetry --version
-        echo "$PUB_ENV"
-        echo "$SUPER_SECRET_A"
-        echo "$PUB_ENV"
-        poetry config pypi-token.pypi "$SUPER_SECRET_A"
+        poetry config pypi-token.pypi "$PYPI_TOKEN"
         poetry build
         poetry publish
-    # - name: Show TOKEN 1
-    #   env:
-    #     DEBUG_PASSWORD: ${{ secrets.PYPY_PUBLISH }}
-    #   run: |
-    #     echo ${{secrets.PYPY_PUBLISH}} | sed 's/./& /g'
-    # - name: Run tmate
-    #   uses: mxschmitt/action-tmate@v2
-    # - name: Publish package
-    #   uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
-    #   with:
-    #     user: __token__
-    #     password: ${{ secrets.PYPY_PUBLISH }}
