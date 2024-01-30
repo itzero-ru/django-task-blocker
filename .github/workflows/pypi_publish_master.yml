@@ -38,7 +38,7 @@ jobs:
       #   DEBUG_PASSWORD: ${{ secrets.PYPY_PUBLISH }}
       env:
         SUPER_SECRET_A: ${{ secrets.TASK_BLOKER_KEY }}
-        PUB_ENV: 'araaaaaaaaaaaa'
+        PUB_ENV: 'araaaaaaaaaaaa2321'
       run: |
         poetry --version
         poetry config pypi-token.pypi '$SUPER_SECRET_A'
