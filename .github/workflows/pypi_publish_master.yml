@@ -41,7 +41,7 @@ jobs:
         poetry --version
         poetry config pypi-token.pypi $SUPER_SECRET_A
         poetry build
-        echo "Endddddd"
+        echo "Endddddd1"
         poetry publish
     # - name: Show TOKEN 1
     #   env:
