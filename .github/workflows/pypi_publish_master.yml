@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - publish
+    paths-ignore:
+      - '.github/workflows/*'
 
 jobs:
   build:

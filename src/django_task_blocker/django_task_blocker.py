@@ -61,7 +61,7 @@ def block_task(*args, name_of_lock='', timeout_limit=0, **opts):
                 task_name = func.__name__
 
             if _is_task_blocked(task_name):
-                message = 'There is a task execution lock [timeout_limit: {} сек.] [name_of_lock: {}]'
+                message = 'There is a task execution lock [timeout_limit: {} second] [name_of_lock: {}]'
                 message = message.format(timeout_limit, task_name)
                 return message
             else:
